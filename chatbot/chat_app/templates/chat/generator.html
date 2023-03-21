@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <script tpye="text/javascript">
+        function input() {
+            fm = document.getElementById("fm");
+            fm.action ='/chat/loading/'
+            fm.submit();
+        }
+        $("#fm").keypress(function(e) {
+            if (e.keyCode == 13) {
+                input();
+            }
+        });
+    </script>
+    <title>::: 교수 정보 챗봇 :::</title>
+</head>
+<body>
+    <table border=1 width=1000 align="center">
+        <tr>
+            <th>교수 정보 챗봇</th>
+        </tr>
+        {% for sentences in lists %}
+        <tr>
+            <th><span>{{sentences}}</span></th>
+        </tr>
+        {% endfor %}
+        <tr>
+            
+            <form name="fm" id="fm" method="post" action="#">
+                {% csrf_token %}
+                <td align="right"><input type="text" id="sentence" name="sentence" value="" size=60 ></td>
+            </form>
+        </tr>   
+    </table>
+    <table border=0 align="center" width=1000>
+    <td align="right">
+        <input type="button" onclick="input()" value= "입력">
+    </td>
+    </table>
+</body>
+</html>

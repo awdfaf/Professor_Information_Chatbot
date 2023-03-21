@@ -1,0 +1,38 @@
+# 가상환경 생성
+conda create -n pknu_1_miniproj python=3.9 # 파이썬 버전에 따라 다르게
+
+# 가상환경 활성화
+conda activate pknu_1_miniproj
+
+# 가상공간에 패키지 설치
+conda install -c conda-forge jupyter notebook
+
+# 가상환경 연결
+python -m ipykernel install --user --name pknu_1_miniproj --display-name pknu_1_miniproj_kernel
+
+# 라이브러리 설치
+pip install ipython jupyter matplotlib pandas sklearn xlrd seaborn
+
+pip install openpyxl
+
+pip install tensorflow==2.8.2
+
+conda install -c conda-forge pydot graphviz
+
+# nltk 설치
+pip install nltk
+
+# konlpy 설치
+pip install konlpy
+
+# Selenium 설치
+pip install selenium
+
+pip install JPype1
+
+- `pip install chardet`
+
+- `pip install charset-normalizer`
+
+conda install -c conda-forge django==4.0.1
+
